@@ -1,16 +1,17 @@
 <script>
+
 export default {
     name: 'TypeSearch'
 }
 </script>
 
 <template>
-    <div class="container-fluid">
+    <div class="container py-4">
         <select class="ms_select form-select bg-light" aria-label="Default select example">
             <option selected>Open this select menu</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            <option value="1">Alien</option>
+            <option value="2">Alien</option>
+            <option value="3">Alien</option>
         </select>
     </div>
 </template>

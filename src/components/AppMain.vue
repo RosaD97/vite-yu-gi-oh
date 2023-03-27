@@ -1,17 +1,26 @@
 <script>
 import TypeSearch from './TypeSearch.vue';
+import CardList from './CardList.vue';
 export default {
     name: 'AppMain',
     components: {
-        TypeSearch
+        TypeSearch,
+        CardList
     }
 }
 </script>
 
 <template>
-    <main class="bg-primary">
+    <main>
         <TypeSearch></TypeSearch>
+        <CardList></CardList>
     </main>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@use '../assets/_partial/variables' as *;
+main{
+    background-color: $primary;
+
+}
+</style>

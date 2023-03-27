@@ -1,11 +1,12 @@
 <script>
+
 export default {
     name: 'AppHeader'
 }
 </script>
 
 <template>
-    <header class="container-fluid ms_header">
+    <header class="container ms_header">
         <div>Yu-Gi-Oh-Api</div>
     </header>
 </template>
