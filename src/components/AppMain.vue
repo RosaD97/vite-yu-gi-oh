@@ -18,7 +18,7 @@ export default {
 
 <template>
     <main>
-        <TypeSearch></TypeSearch>
+        <TypeSearch @search="searchArchetype"></TypeSearch>
         <div>trovate {{ store.cardsFounds }} carte</div>
         <CardList></CardList>
     </main>
@@ -26,7 +26,8 @@ export default {
 
 <style lang="scss" scoped>
 @use '../assets/_partial/variables' as *;
-main{
+
+main {
     background-color: $primary;
 
 }

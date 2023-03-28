@@ -16,17 +16,20 @@ export default {
     }
   },
   methods: {
-    
-
-  },
-  created() {
-    axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
+    search(){
+      axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php', {
+        params: {
+          archetype: store.select
+        }
+      })
       .then((response) => {
         this.store.cards = response.data.data;
         this.store.cardsFounds = response.data.data.length;
       })
-      
-
+    }
+  },
+  created() {
+    this.search();
   }
 }
 </script>
