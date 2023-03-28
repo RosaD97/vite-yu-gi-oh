@@ -1,17 +1,32 @@
 <script>
+import { store } from '../store';
+import axios from 'axios';
 
 export default {
-    name: 'TypeSearch'
+    name: 'TypeSearch',
+    Data(){
+        return {
+            store,
+            archetypes: []
+        }
+    },
+    created(){
+        axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
+        .then((response) => {
+            this.archetypes = response.data;
+            // console.log(response.data)
+        })
+    }
 }
 </script>
 
 <template>
     <div class="container py-4">
-        <select class="ms_select form-select bg-light" aria-label="Default select example">
+        <select v-model="store.select" class="ms_select form-select bg-light" aria-label="Default select example">
             <option selected>Open this select menu</option>
-            <option value="1">Alien</option>
-            <option value="2">Alien</option>
-            <option value="3">Alien</option>
+            <option> Alien </option>
+            <option>-Eyes Dragon</option>
+            <option>ABC</option>
         </select>
     </div>
 </template>

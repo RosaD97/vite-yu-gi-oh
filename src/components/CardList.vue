@@ -1,6 +1,6 @@
 <script>
 import Card from './Card.vue';
-import axios from 'axios';
+import { store } from '../store';
 
 export default {
     name: 'CardList',
@@ -9,24 +9,16 @@ export default {
     },
     data() {
         return {
-            cards: []
+            store
         }
-    },
-    created() {
-        axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
-            .then((response) => {
-                this.cards = response.data.data;
-            })
-
     }
-
 }
 </script>
 
 <template>
     <div class="container ms_container">
         <div class="row mb-2">
-            <div class="col-6 col-sm-2" v-for="card in cards.slice(0,50)">
+            <div class="col-6 col-sm-2" v-for="card in store.cards.slice(0,50)">
                 <Card 
                 :img="card.card_images[0].image_url"
                 :title="card.name"

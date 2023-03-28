@@ -1,7 +1,13 @@
 <script>
 import TypeSearch from './TypeSearch.vue';
 import CardList from './CardList.vue';
+import { store } from '../store';
 export default {
+    data() {
+        return {
+            store
+        }
+    },
     name: 'AppMain',
     components: {
         TypeSearch,
@@ -13,6 +19,7 @@ export default {
 <template>
     <main>
         <TypeSearch></TypeSearch>
+        <div>trovate {{ store.cardsFounds }} carte</div>
         <CardList></CardList>
     </main>
 </template>
